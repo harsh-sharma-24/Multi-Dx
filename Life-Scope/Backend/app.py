@@ -11,7 +11,7 @@ from sklearn.exceptions import InconsistentVersionWarning
 
 with ignore_warnings(category=InconsistentVersionWarning):
     mental_health_model = joblib.load(r'C:\Users\hs298\Desktop\Life-Scope\ML Models\menV1.joblib')
-    heart_attack_model = joblib.load(r'C:\Users\hs298\Desktop\Life-Scope\ML Models\XGBV1.joblib')
+    heart_attack_model = joblib.load(r'C:\Users\hs298\Desktop\Life-Scope\ML Models\XGBV4.joblib')
 app = Flask(__name__)
 
 @app.route('/predict/mental-health', methods=['POST'])
