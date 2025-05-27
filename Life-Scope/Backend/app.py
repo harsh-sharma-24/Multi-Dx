@@ -83,7 +83,11 @@ def predict_heart_attack():
         input_df = pd.DataFrame([processed], columns=columns)
         prediction = heart_attack_model.predict(input_df)[0]
         
-        return jsonify({'heart_attack_risk': bool(prediction)})
+        y_proba = heart_attack_model.predict_proba(input_df)[:, 1]
+        threshold = 0.25  
+        prediction = (y_proba >= threshold).astype(int)
+        
+        return jsonify({'heart_attack_risk': bool(prediction[0])})
     
     except Exception as e:
         return jsonify({'error': str(e)}), 400
