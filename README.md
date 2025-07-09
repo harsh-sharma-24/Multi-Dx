@@ -21,4 +21,4 @@
 
 ## Contributors
 - **Harshvardhan Sharma** - Backend Developer And ML Model Trainer
-- **Anshu Jain** - Frontend Developer
+- 
