@@ -1,0 +1,7 @@
+V1 Model
+
+1.Sex, 
+2.Cholestrol,
+3.Diabeties,
+4.Smoking,
+5.Alcohol Consumption,

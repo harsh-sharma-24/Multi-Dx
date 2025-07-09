@@ -1,0 +1,51 @@
+PREDICTION
+
+1.Heart Health 
+2.Mental Health 
+3.diabetes     
+4.hypertension 
+5.Skin Infection (IMAGE BASED)
+
+
+Database Variables
+
+1. Name 
+2. email 
+3. password 
+4. phone no.
+5. age
+6. gender
+7. Previous Test Result 
+
+                                  
+COMPLEMENTARY 
+
+1.Precautions Health care tips      
+
+Tools and Techniques 
+
+Frontend  : 
+
+1. React 
+2. JavaScript 
+3. Html & Css
+4. Tailwind Css
+
+Backend : 
+1. Flask 
+2. Mongo DB  (Database)
+
+ML :
+ 
+1. Sk learn 
+2. jupyter notebook 
+3. pandas , numpy ,seaborn , Matplot lib
+
+Date wise Plan 
+
+30 - 06 -> 02 - 07 = > Login Page Design 
+02 - 07 -> 05 - 07 = > Heart Health 
+06 - 07 -> 07 - 07 = > Mental Health 
+08 - 07 -> 09 - 07 = > Diabetes Prediction 
+10 - 07 -> 11 - 07 = > Hyper tension 
+        
