@@ -1,0 +1,10 @@
+Variables  
+
+['male', 'age', 'currentSmoker', 'diabetes', 'BMI', 'heartRate']
+
+!!!!!
+
+threshold = 0.50
+y_pred_thresh = np.where(y_proba >= threshold, 1, 0)
+
+use this line in the backend function 

@@ -1,8 +1,8 @@
 PREDICTION
 
-1.Heart Health 
-2.Mental Health 
-3.diabetes     
+1.Heart Health (done)
+2.Mental Health (done) 
+3.diabetes (done)
 4.hypertension 
 5.Skin Infection (IMAGE BASED)
 

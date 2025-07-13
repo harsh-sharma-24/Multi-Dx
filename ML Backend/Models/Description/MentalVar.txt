@@ -1,0 +1,16 @@
+Variables Of Mental Health Model are :
+
+
+Age 1-100
+gender = male : 1, female :2,Non Binary : 3 , Prefer Not to Say : 4
+employment status  = Employed : 1 , Student : 2 , Self Emp : 3 , Unemployed : 4
+Work Env : Onsite : 1 , Remote : 2 , Hybrid : 3 
+Mental History : No : 1 , Yes : 2
+Seek Treatment :  No : 1 , Yes : 2
+Stress Level : 0-10 
+Sleep Hours : 1-24
+Physical activity days : 0-7
+Depression Score : 1-10
+Anxiety Score : 1-10
+Social Support Score : 1-10
+## Mental Health Risk :  High : 1 , Medium : 2 , Low : 3 ## Final OUTPUT

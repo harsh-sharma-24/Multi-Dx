@@ -1,0 +1,28 @@
+Pregnancies:
+- Number of times the person has been pregnant
+- Range: 0 – 17
+
+Glucose:
+- Plasma glucose concentration (mg/dL)
+- Range: 0 – 200+
+
+BloodPressure:
+- Diastolic blood pressure (mm Hg)
+- Range: 0 – 122
+
+Insulin:
+- 2-Hour serum insulin (µU/mL)
+- Range: 0 – 846
+
+BMI:
+- Body Mass Index (weight/height², kg/m²)
+- Range: 0.0 – 67.1
+
+Age:
+- Age in years
+- Range: 21 – 81
+
+Outcome:
+- Target label (0 = Non-Diabetic, 1 = Diabetic)
+
+

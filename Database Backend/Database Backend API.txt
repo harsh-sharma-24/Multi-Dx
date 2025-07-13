@@ -1,0 +1,6 @@
+Database Backend API : 
+
+signup : POST
+Login : POST
+Get user data : GET
+Update Data  : POST
