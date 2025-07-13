@@ -1,12 +1,12 @@
-# Life Scoop
+# Multi-Dx
 
-**Life Scoop** is an innovative predictive analytics tool designed to assess an individual's heart disease risk and mental health risk based on various health parameters. By leveraging machine learning and data-driven insights, Life Scoop provides users with early warnings and recommendations to support proactive health management.
+**Multi-Dx** is an innovative predictive analytics tool designed to assess an individual's heart disease risk and mental health risk based on various health parameters. By leveraging machine learning and data-driven insights, Life Scoop provides users with early warnings and recommendations to support proactive health management.
 
 ## Features
 - **Heart Risk Prediction**: Utilizes medical history to predict potential heart-related issues.
-- **Mental Health Assessment**: Analyzes mental health indicators to provide an assessment of psychological well-being.
-- **Personalized Insights**: Offers actionable recommendations based on individual risk assessments.
-- **User-Friendly Interface**: Designed for accessibility with an intuitive dashboard.
+- **Mental Health Prediction**: Analyzes mental health indicators to provide an assessment of psychological well-being.
+- **Diabetes Risk Prediction**: Analyzes key indicators and provide the risk of Diabetes.
+- **Hypertension Prediction**: predicting the likelihood of hypertension based on lifestyle and biometric indicators.
 
 ## Technologies Used
 - **Machine Learning**
