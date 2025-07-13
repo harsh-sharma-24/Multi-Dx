@@ -3,9 +3,9 @@ from flask import Flask, request, jsonify
 from joblib import load
 import pandas as pd
 import numpy as np
+import requests
 
 app = Flask(__name__)
-
 
 model_path1 = r'C:\Users\hs298\Desktop\Projects\Life Scoop\ML Backend\Models\heart_attack_modelV1.joblib'
 model = load(model_path1)
@@ -15,6 +15,25 @@ model_path3 = r"C:\Users\hs298\Desktop\Projects\Life Scoop\ML Backend\Models\Dia
 diabetes_model = load(model_path3)
 model_path4 = r"C:\Users\hs298\Desktop\Projects\Life Scoop\ML Backend\Models\Hypertension.joblib"
 hypertension_model = load(model_path4)
+
+def update_user_field(email: str, field: str, value):
+    try:
+        response = requests.post("http://localhost:5001/update_prediction", json={
+            "email": email,
+            "type": field,
+            "result": value
+        })
+
+        if response.status_code != 200:
+            print("Failed to update Mongo backend:", response.text)
+            return {"error": "Mongo update failed", "details": response.text}, response.status_code
+
+        print("Mongo update successful:", response.json())
+        return response.json(), 200
+
+    except Exception as e:
+        print("Error contacting Mongo backend:", e)
+        return {"error": "Internal server error"}, 500
 
 @app.route('/predict-mental-health', methods=['POST'])
 def predict_mental_health():
@@ -42,7 +61,8 @@ def predict_mental_health():
         # Optional: assign readable labels
         risk_labels = {1: "High", 2: "Medium", 3: "Low"}
         risk_label_str = risk_labels[risk_class]
-
+        email = input_data.get("email", "").strip().lower()
+        update_user_field(email, "Diabetes", risk_lebel_str)
         return jsonify({
             'mental_risk_class': int(risk_class),  # cast from np.int64 to Python int
             'mental_risk_level': risk_label_str,
@@ -81,12 +101,15 @@ def predict_diabetes():
         # Predict
         proba = diabetes_model.predict_proba(data_df)[0][1]
         risk = int(proba > 0.5)
-
+        risk_level = 'Positive' if risk else 'Negative'
+        email = input_data.get("email", "").strip().lower()
+        update_user_field(email, "Diabetes", risk_level)
         return jsonify({
             'diabetes_probability': round(float(proba), 3),
             'diabetes_risk': 'Positive' if risk else 'Negative',
             'risk_score_percent': round(float(proba * 100), 2)
         })
+        
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -120,7 +143,8 @@ def predictheart():
         threshold = 0.25  
         risk = 1 if proba > threshold else 0
         risk_level = risk_label(proba)
-
+        email = input_data.get("email", "").strip().lower()
+        update_user_field(email, "Heart Attack Risk", risk_level)
 
         return jsonify({
         'risk_score': round((proba*100)%100, 3),
@@ -134,6 +158,7 @@ def predict_hypertension():
     try:
         expected_keys = ['male', 'age', 'currentSmoker', 'diabetes', 'BMI', 'heartRate']
         input_data = request.get_json()
+
 
         # Validate input
         if not all(k in input_data for k in expected_keys):
@@ -153,6 +178,10 @@ def predict_hypertension():
         proba = hypertension_model.predict_proba(data_df)[0][1]  
         threshold = 0.4
         risk = int(proba > threshold)
+        result = 'Positive' if risk else 'Negative'
+        email = input_data.get("email", "").strip().lower()
+        update_user_field(email, "Hypertension", result)
+
 
         return jsonify({
             'hypertension_probability': round(float(proba), 3),
