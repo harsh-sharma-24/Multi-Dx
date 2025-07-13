@@ -20,5 +20,5 @@
 3. Insights and recommendations are provided based on the analysis.
 
 ## Contributors
-- **Harshvardhan Sharma** - Backend Developer And ML Model Trainer
+- **Harshvardhan Sharma** - Backend Developer And ML Engineer
 - 
